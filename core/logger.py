@@ -16,7 +16,7 @@ def get_logger(module_name):
 
     # Initialize the logger for the specific module
     logger = logging.getLogger(module_name)
-    logger.setlevel(logging.INFO)
+    logger.setLevel(logging.INFO)
 
     # Format how the logs are viewed.
     # File format: Detailed for debugging (Date - Name - Level - Message)
@@ -28,7 +28,7 @@ def get_logger(module_name):
     # Create the Handlers (Where the logs go)
 
     # File Handler: Appends logs to 'logs/growth-automation-stack.log'
-    file_handler = logging.FileHandler(logs_dir, "growth-automation-stack.logs")
+    file_handler = logging.FileHandler(os.path.join(logs_dir, "growth-automation-stack.logs"))
     file_handler.setFormatter(file_format)
 
     # Console Handler: Prints logs to the VS Code terminal
