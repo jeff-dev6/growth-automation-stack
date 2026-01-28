@@ -1,6 +1,5 @@
 import logging
-import os
-from datetime import datetime
+from pathlib import Path
 
 def get_logger(module_name):
     """
@@ -10,9 +9,8 @@ def get_logger(module_name):
     """
 
     # Ensure the 'logs' directory exists at the project root.
-    logs_dir = "logs"
-    if not os.path.exists(logs_dir):
-        os.mkdirs(logs_dir)
+    logs_dir = Path("logs")
+    logs_dir.mkdir(parents=True, exist_ok=True)
 
     # Initialize the logger for the specific module
     logger = logging.getLogger(module_name)
@@ -28,7 +26,7 @@ def get_logger(module_name):
     # Create the Handlers (Where the logs go)
 
     # File Handler: Appends logs to 'logs/growth-automation-stack.log'
-    file_handler = logging.FileHandler(os.path.join(logs_dir, "growth-automation-stack.logs"))
+    file_handler = logging.FileHandler(logs_dir / "growth-automation-stack.logs")
     file_handler.setFormatter(file_format)
 
     # Console Handler: Prints logs to the VS Code terminal
