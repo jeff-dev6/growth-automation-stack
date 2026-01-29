@@ -1,6 +1,24 @@
-venv/
+# Credentials & Secrets
 .env
-logs/
-*.log
+
+# Environments
+venv/
+env/
+.venv/
+
+# Logs (Keep the folder, ignore the files)
+logs/*.log
+
+# Python Artifacts
 __pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Testing Artifacts
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Local Dev Scripts
 run_test.py
