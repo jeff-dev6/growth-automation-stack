@@ -22,3 +22,17 @@ htmlcov/
 
 # Local Dev Scripts
 run_test.py
+
+# Ignore local outputs
+output/
+
+# Ignore all files in the assets folder
+assets/*
+
+# Do NOT ignore the .gitkeep file (this keeps the folder alive)
+!assets/.gitkeep
+
+# Ignore the output folder and python cache
+output/
+__pycache__/
+*.pyc
