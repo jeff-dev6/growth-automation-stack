@@ -24,8 +24,8 @@ class RegistryValidator:
 
         if not cleaned_credential:
             return {"is_valid": False, "error_code": "ERR_EMPTY_INPUT"}
+            
         # Rule 1. Length check (2-6 characters)
-
         if not (2 <= len(cleaned_credential) <= 6):
             return {"is_valid": False, "error_code": "ERR_INVALID_CHAR_LENGTH"}
        
